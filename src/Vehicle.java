@@ -1,4 +1,4 @@
-public abstract class Vehicle {
+public abstract class Vehicle implements Serviceable {
     protected String modelName;
     protected int wheelsCount;
 
@@ -7,13 +7,16 @@ public abstract class Vehicle {
         this.wheelsCount = wheelsCount;
     }
 
-    public abstract void updateTyre();
-
     public String getModelName() {
         return modelName;
     }
 
     public int getWheelsCount() {
         return wheelsCount;
+    }
+
+    @Override
+    public void doService() {
+        System.out.println("Обслуживаем " + getModelName());
     }
 }
